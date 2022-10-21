@@ -1,0 +1,21 @@
+<div>
+    <h3 style="background-color: blueviolet;color: white; font-size: larger; text-align: center;" > Register user</h3>
+    <form style="border: 100px; background-color:cornsilk ;" [formGroup]="userRef" (ngSubmit)="addUser()" >      
+       
+
+        <label> User Name </label>
+        <input  type="text" formControlName="name" size="20" maxlength="20" required  /> <br/> <br/>
+        <label>  Email Id      </label>
+        <input  type="text" formControlName="email" size="20" maxlength="20" required  /> <br/> <br/>
+        <label> Password </label>
+        <input  type="text" formControlName="password" size="10" maxlength="10" required  /> <br/> <br/>
+        <label> Country </label>
+        <input type="text" formControlName="country"  size="10" />   <br/> <br/>
+        <input type="submit" [value]="buttonName"/> 
+        <input type="reset" value="reset"/>       
+      
+    </form> <br/>  
+    <hr/>
+
+    <span style="color: red;"> {{storeMsg}} </span>     
+</div>

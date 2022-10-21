@@ -1,0 +1,41 @@
+<div>
+    <h3 style="background-color: blueviolet;color: white; font-size: larger; text-align: center;"> Configure Medicine
+    </h3>
+    <form style="border: 100px; background-color:cornsilk ;" [formGroup]="MedRef" (ngSubmit)="addMedcine()">
+        <label> Medicine name </label>
+        <input type="text" formControlName="name" size="20" maxlength="20" required /> <br /> <br />
+        <label> Price </label>
+        <input type="number" formControlName="price" size="4" maxlength="4" required /> <br /> <br />
+        <label> Category </label>
+        <input type="text" formControlName="category" size="20" maxlength="20" required /> <br /> <br />
+        <label> Active </label>
+        <input type="text" formControlName="enableFlag" size="20" maxlength="20" required /> <br /> <br />
+        <label> Image Address </label>
+        <input type="url" formControlName="url"  /> <br /> <br />
+        <input type="submit" [value]="buttonName" />
+        <input type="reset" value="reset" />
+
+    </form>
+    <br/>
+    <span style="color: red;"> {{storeMsg}} </span>
+
+    <hr/>
+    
+
+    <div>
+
+    </div>
+    <h3 style="text-align:center ; color:blue"> Medcines List </h3>
+    <div *ngFor="let m of m1">
+        <img src={{m.url}} width="200px" height="200px" />
+        <span>Name : {{m.name}} </span>
+        <span> | Price : {{m.price}}  </span>
+        <input type="button" value="Delete" (click)="deleteMedicine(m.id)"/>  ! 
+        <input type="button" value="update" (click)="updateMedicine(m)"/>
+        
+        <br/><br/>
+
+    </div>
+
+
+</div>

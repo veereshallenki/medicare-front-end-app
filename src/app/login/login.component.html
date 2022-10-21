@@ -1,0 +1,46 @@
+<!-- 
+<div>
+    <h2> Sign page</h2>
+    <form>
+        <label>Email ID  </label>
+        <input type="text" name="emmail" ngModel/><br/><br/>
+        <label>Password  </label>
+        <input type="password" name="password" ngModel/><br/> <br/>
+        <input type="submit" value="submit"/>       !  
+        <input type="reset" value="reset"/>
+    </form>
+</div>
+-->
+<h2> Sign page</h2>
+<form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example1">Email address  </label>  
+      <input type="email" id="form2Example1" class="form-control" name="emailid"  value="Email addres" ngModel /> <br/> <br/>
+      
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Password  </label> 
+      <input type="password" id="form2Example2" name="password" class="form-control" ngModel />
+      
+    </div>
+  
+      <br/> <br/>
+  
+    <!-- Submit button -->   
+
+    <input type="submit" value="submit"/>       !  
+    <input type="reset" value="reset"/>
+  
+    <!-- Register buttons -->
+    <div class="text-center">
+      <p>Not a member? Please Register using Register link</p>       
+    </div>
+  </form>
+  <div>
+    <span style="color: red; background-color:white ; "> {{msg}}</span>
+    <router-outlet></router-outlet> <br/>
+    <input type="button" value="logout" />
+  </div>

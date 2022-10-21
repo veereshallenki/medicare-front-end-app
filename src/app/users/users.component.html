@@ -1,0 +1,65 @@
+
+<div>
+    <!-- 
+    <input type="button" value="Extract user Details" (click)="loadAllUsers()" />
+    <br />
+    -->
+    <h3 style="background-color: blueviolet;color: white; font-size: larger; text-align: center;" > Configure user</h3>
+    <form style="border: 100px; background-color:cornsilk ;" [formGroup]="userRef" (ngSubmit)="addUser()" >      
+        <!--
+        <label> User Id </label>
+        <input  type="number" formControlName="id" /> <br/> <br/>
+        -->
+
+        <label> User Name </label>
+        <input  type="text" formControlName="name" size="20" maxlength="20" required  /> <br/> <br/>
+        <label>  Email Id      </label>
+        <input  type="text" formControlName="email" size="20" maxlength="20" required  /> <br/> <br/>
+        <label> Password </label>
+        <input  type="text" formControlName="password" size="10" maxlength="10" required  /> <br/> <br/>
+        <label> Country </label>
+        <input type="text" formControlName="country"  size="10" />   <br/> <br/>
+        <input type="submit" [value]="buttonName"/> 
+        <input type="reset" value="reset"/>
+       
+       
+      
+    </form> <br/>    
+
+    <hr/>
+
+    <span style="color: red;"> {{storeMsg}} </span>     
+
+  
+
+    <div> 
+        <h3 style="text-align:center ; color:blue">  Regigstered users </h3>
+        <table class="table table-bordered table-striped" border="1">
+            <thead>
+                <tr>
+                    <th bgcolor=#d2d8b0 width=15%>Id</th>
+                    <th bgcolor=#d2d8b0 width=15%>Name</th>
+                    <th bgcolor=#d2d8b0 width=15%>Email</th>
+                    <th bgcolor=#d2d8b0 width=15%>Country</th>                   
+                    <th bgcolor=#d2d8b0 width=15%>Action 2</th>
+                    <th bgcolor=#d2d8b0 width=15%>Action 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of u1">
+                    <td bgcolor=white width=10% align="center">  {{u.id}}</td>
+                    <td bgcolor=white width=10%>  {{u.name}}</td>
+                    <td bgcolor=white width=10%>  {{u.email}}</td>
+                    <td bgcolor=white width=10% align="center">  {{u.country}}</td>                   
+                    <td bgcolor=white width=10% align="center"><button type="button" (click)='deleteUser(u.id)'  class="btn btn-primary" >Delete</button></td>
+                    <td bgcolor=white width=10% align="center"><button type="button" (click)='updateUser(u)'   class="btn btn-primary">update</button></td>
+
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+</div>
